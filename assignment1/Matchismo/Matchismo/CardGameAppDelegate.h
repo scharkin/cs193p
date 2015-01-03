@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CardGameAppDelegate.h
 //  Matchismo
 //
 //  Created by Sergey Charkin on 1/3/15.
@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface CardGameAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 
 @end

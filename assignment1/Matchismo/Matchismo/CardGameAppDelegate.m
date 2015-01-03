@@ -1,18 +1,18 @@
 //
-//  AppDelegate.m
+//  CardGameAppDelegate.m
 //  Matchismo
 //
 //  Created by Sergey Charkin on 1/3/15.
 //  Copyright (c) 2015 Fun. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "CardGameAppDelegate.h"
 
-@interface AppDelegate ()
+@interface CardGameAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation CardGameAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
