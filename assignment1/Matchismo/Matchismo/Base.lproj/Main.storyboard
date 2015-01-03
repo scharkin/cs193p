@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +21,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbo-So-vAc">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="A♣︎" backgroundImage="cardfront">
+                                <state key="normal" backgroundImage="cardback">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -33,9 +34,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="559" width="368" height="21"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,10 +49,10 @@
                                 <exclude reference="UlM-HY-WpP"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="f9w-ef-7wq"/>
+                                <exclude reference="luM-to-Btd"/>
                                 <exclude reference="MrR-yZ-ZfE"/>
                                 <exclude reference="ezE-RM-e5g"/>
-                                <exclude reference="luM-to-Btd"/>
-                                <exclude reference="f9w-ef-7wq"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -63,10 +61,10 @@
                                 <include reference="UlM-HY-WpP"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="f9w-ef-7wq"/>
+                                <include reference="luM-to-Btd"/>
                                 <include reference="MrR-yZ-ZfE"/>
                                 <include reference="ezE-RM-e5g"/>
-                                <include reference="luM-to-Btd"/>
-                                <include reference="f9w-ef-7wq"/>
                             </mask>
                         </variation>
                     </view>
@@ -79,6 +77,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cardfront" width="64" height="96"/>
+        <image name="cardback" width="64" height="96"/>
     </resources>
 </document>
