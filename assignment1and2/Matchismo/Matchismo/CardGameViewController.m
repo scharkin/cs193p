@@ -14,7 +14,9 @@
 @interface CardGameViewController ()
 @property (strong,nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *chooseMode;
 @end
 
 @implementation CardGameViewController
@@ -34,6 +36,7 @@
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
     [self updateUI];
+    [self.chooseMode setEnabled:NO];
 }
 
 - (void)updateUI {
@@ -44,6 +47,7 @@
         [cardButton setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
     }
+    self.resultLabel.text = self.game.result;
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
 }
 
@@ -54,4 +58,16 @@
 - (UIImage *)backgroundImageForCard:(Card *)card {
     return [UIImage imageNamed:card.isChosen ? @"cardfront" : @"cardback"];
 }
+
+- (IBAction)chooseModeAction:(UISegmentedControl *)sender {
+    self.game.extendMatch = sender.selectedSegmentIndex == 1;
+}
+
+- (IBAction)resetButton:(UIButton *)sender {
+    self.game = nil;
+    [self updateUI];
+    self.game.extendMatch = self.chooseMode.selectedSegmentIndex == 1;
+    [self.chooseMode setEnabled:YES];
+}
+
 @end
